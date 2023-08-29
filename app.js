@@ -16,6 +16,7 @@ for that in express, because that we install multer package. Unlike express.urle
 for each rout (go to routs to see).
 */
 app.use(express.static('public'));
+app.use('/images', express.static('images'));  // '/images' - path filter, like rout.
 
 app.use(userRoutes);
 

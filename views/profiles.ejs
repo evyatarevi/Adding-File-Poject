@@ -15,12 +15,18 @@
     </section>
     <section id="user-profiles">
       <ul>
-        <li class="user-item">
-          <article>
-            <img src="" alt="The image of the user.">
-            <h2>User name</h2>
-          </article>
-        </li>
+        <% if(!users || users.length === 0) { %>
+          <h2> No user exist</h2>
+        <% } else { %>
+          <% for(user of users) { %>
+          <li class="user-item">
+            <article>
+              <img src='<%= user.filePath %>' alt="The image of the user.">
+              <h2><%= user.userName %></h2>
+            </article>
+          </li>
+          <% } %>
+          <% } %>
       </ul>
     </section>
   </main>
